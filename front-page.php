@@ -1,57 +1,52 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * Template Name: Home
+ */
+get_header(); ?>
 
 <section class="hero">
   <div class="container">
     <div class="hero__container">
-      <h1 class="page-title">The best local <span>it support</span></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="#" class="button">
-        Try it
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.51346 1.50002L17.0135 1.50002C17.8419 1.50002 18.5135 2.17159 18.5135 3.00002L18.5135 16.5C18.5135 17.3284 17.8419 18 17.0135 18C16.185 18 15.5135 17.3284 15.5135 16.5V6.62134L3.93198 18.2028C3.34619 18.7886 2.39645 18.7886 1.81066 18.2028C1.22487 17.617 1.22487 16.6673 1.81066 16.0815L13.3921 4.50002L3.51346 4.50002C2.68503 4.50002 2.01346 3.82844 2.01346 3.00002C2.01346 2.17159 2.68503 1.50002 3.51346 1.50002Z" fill="currentColor"/>
-        </svg>
-      </a>
-      <div class="hero__benefits">
-        <div class="hero-benefit">
-          <div class="hero-benefit__head">
-            <div class="hero-benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-01.svg" alt="">
+      <h1 class="page-title"><?php the_field('hero_title'); ?></h1>
+      <p><?php the_field('hero_text'); ?></p>
+      <?php 
+      $hero_link = get_field('hero_link');
+      if( $hero_link ): 
+          $hero_link_url = $hero_link['url'];
+          $hero_link_title = $hero_link['title'];
+          $hero_link_target = $hero_link['target'] ? $hero_link['target'] : '_self';
+          ?>
+          <a class="button" href="<?php echo esc_url( $hero_link_url ); ?>" target="<?php echo esc_attr( $hero_link_target ); ?>">
+            <?php echo esc_html( $hero_link_title ); ?>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.51346 1.50002L17.0135 1.50002C17.8419 1.50002 18.5135 2.17159 18.5135 3.00002L18.5135 16.5C18.5135 17.3284 17.8419 18 17.0135 18C16.185 18 15.5135 17.3284 15.5135 16.5V6.62134L3.93198 18.2028C3.34619 18.7886 2.39645 18.7886 1.81066 18.2028C1.22487 17.617 1.22487 16.6673 1.81066 16.0815L13.3921 4.50002L3.51346 4.50002C2.68503 4.50002 2.01346 3.82844 2.01346 3.00002C2.01346 2.17159 2.68503 1.50002 3.51346 1.50002Z" fill="currentColor"/>
+            </svg>
+          </a>
+      <?php endif; ?>
+
+      <?php if( have_rows('hero_benefits') ): ?>
+        <div class="hero__benefits">
+        <?php while( have_rows('hero_benefits') ): the_row(); ?>
+          <?php $benefit = get_sub_field('benefit'); ?>
+          <div class="hero-benefit">
+            <div class="hero-benefit__head">
+              <div class="hero-benefit__icon">
+                <img src="<?php echo $benefit['icon']; ?>" alt="">
+              </div>
+              <h2 class="hero-benefit__title"><?php echo $benefit['title']; ?></h2>
             </div>
-            <h2 class="hero-benefit__title">Scoring</h2>
+            <div class="hero-benefit__text"><?php echo $benefit['text']; ?></div>
           </div>
-          <div class="hero-benefit__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
+        <?php endwhile; ?>
         </div>
-        <div class="hero-benefit">
-          <div class="hero-benefit__head">
-            <div class="hero-benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-02.svg" alt="">
-            </div>
-            <h2 class="hero-benefit__title">Benefit</h2>
-          </div>
-          <div class="hero-benefit__text">
-            Your credit score can determine how much your loan and credit card applications are approved. Not only that, with a credit score you are given the freedom to choose.
-          </div>
-        </div>
-        <div class="hero-benefit">
-          <div class="hero-benefit__head">
-            <div class="hero-benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-01.svg" alt="">
-            </div>
-            <h2 class="hero-benefit__title">Scoring</h2>
-          </div>
-          <div class="hero-benefit__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
-        </div>
-      </div>
+      <?php endif; ?>
     </div>
   </div>
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/frontpage-desktop-bg.jpg" class="frontpage-desktop-bg" alt="">
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/frontpage-mobile-bg.jpg" class="frontpage-mobile-bg" alt="">
+  <img src="<?php the_field('hero_bg_desktop'); ?>" class="frontpage-desktop-bg" alt="background image">
+  <img src="<?php the_field('hero_bg_mobile'); ?>" class="frontpage-mobile-bg" alt="background image">
 </section>
-	<section class="newsbl">
+
+<section class="newsbl">
   <div class="container">
     <div class="heading">
       <h2 class="section-title">NEWS</h2>
@@ -155,7 +150,8 @@
     </div>
   </div>
 </section>
-	<section class="aboutbl">
+
+<section class="aboutbl">
   <div class="container">
     <div class="aboutbl__container">
       <div class="aboutbl__col">
@@ -249,7 +245,8 @@
     </div>
   </div>
 </section>
-	<section class="fclients">
+
+<section class="fclients">
   <div class="container">
     <div class="heading">
       <h2 class="section-title">Information for clients</h2>
@@ -295,7 +292,8 @@
     </div>
   </div>
 </section>
-	<section class="contactusbl">
+	
+<section class="contactusbl">
   <div class="container">
     <div class="contactusbl__container">
       <div class="heading">

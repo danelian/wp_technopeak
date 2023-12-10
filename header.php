@@ -14,7 +14,7 @@
 <header class="header" id="header">
   <div class="container">
     <div class="header__container">
-      <a href="/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="technopeak logo"></a>
+      <a href="<?php echo get_home_url(); ?>" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="technopeak logo"></a>
       <nav class="header__nav" id="burger-menu">
         <div class="header__nav-head">
           <a href="/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="technopeak logo"></a>
