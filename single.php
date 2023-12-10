@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Single News
+*/
+get_header(); ?>
 
 	<section class="news">
   <div class="container">

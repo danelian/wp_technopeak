@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Services
+*/
+get_header(); ?>
 
 	<section class="services">
   <div class="container">

@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Industry
+*/
+get_header(); ?>
 
 	<section class="industry">
   <div class="container">

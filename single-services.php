@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Single Services
+*/
+get_header(); ?>
 
 	<section class="s-head" id="s-head">
   <div class="container">

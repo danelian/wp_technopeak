@@ -6,14 +6,16 @@
       <div class="footer__container">
         <div class="footer__menu">
           <h3 class="footer__title">Site menu:</h3>
-          <ul>
-            <li><a href="#">Solutions</a></li>
-            <li><a href="#">Industry</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contacts</a></li>
-          </ul>
+          <?php
+          wp_nav_menu([
+            'theme_location' => 'footer',
+            'container' => '',
+            'menu_class' => false,
+            'menu_id' => false,
+            'echo' => true,
+            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+          ]);
+          ?>
         </div>
         <div class="footer__contacts">
           <h3 class="footer__title">Telephone:</h3>

@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Single Industry
+*/
+get_header(); ?>
 
 	<section class="si-section">
   <div class="container">

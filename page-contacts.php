@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Contacts
+*/
+get_header(); ?>
 
 	<section class="contacts">
   <div class="container">

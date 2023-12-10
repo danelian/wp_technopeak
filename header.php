@@ -23,36 +23,16 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/burger-close.svg" alt="close burger menu">
           </button>
         </div>
-        <ul class="header__menu">
-          <li><a href="about-us.html">About us</a></li>
-          <li><a href="archive-industry.html">Industry</a></li>
-          <li><a href="archive-news.html">News</a></li>
-          <li><a href="contacts.html">Contacts</a></li>
-          <li class="menu-item-has-children">
-            <a href="archive-solutions.html">Solutions</a>
-            <ul class="sub-menu">
-              <li><a href="single-solutions.html">IT Infrastructure Support</a></li>
-              <li><a href="single-solutions.html">IT Infrastructure Support</a></li>
-              <li><a href="single-solutions.html">IT Infrastructure Support</a></li>
-              <li><a href="single-solutions.html">IT Infrastructure Support</a></li>
-              <li><a href="single-solutions.html">IT Infrastructure Support</a></li>
-              <li><a href="single-solutions.html">IT Infrastructure Support</a></li>
-              <li><a href="single-solutions.html">IT Infrastructure Support Support</a></li>
-            </ul>
-          </li>
-          <li class="menu-item-has-children">
-            <a href="archive-services.html">Services</a>
-            <ul class="sub-menu">
-              <li><a href="single-services.html">IT Infrastructure Support</a></li>
-              <li><a href="single-services.html">IT Infrastructure Support</a></li>
-              <li><a href="single-services.html">IT Infrastructure Support</a></li>
-              <li><a href="single-services.html">IT Infrastructure Support</a></li>
-              <li><a href="single-services.html">IT Infrastructure Support</a></li>
-              <li><a href="single-services.html">IT Infrastructure Support</a></li>
-              <li><a href="single-services.html">IT Infrastructure Support Support</a></li>
-            </ul>
-          </li>
-        </ul>
+        <?php
+        wp_nav_menu([
+          'theme_location' => 'header',
+          'container' => '',
+          'menu_class' => 'header__menu',
+          'menu_id' => false,
+          'echo' => true,
+          'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        ]);
+        ?>
         <form role="search" method="get" id="searchForm" action="#" class="searchform second-search">
           <input class="searchform-input" type="search" placeholder="Search" value="" name="s" id="s">
           <button type="submit" role="button" class="searchform-btn" id="searchButton">
