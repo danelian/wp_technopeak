@@ -46,6 +46,95 @@ get_header(); ?>
   <img src="<?php the_field('hero_bg_mobile'); ?>" class="frontpage-mobile-bg" alt="background image">
 </section>
 
+<section class="aboutbl">
+  <div class="container">
+    <div class="aboutbl__container">
+      <div class="aboutbl__col">
+        <h2 class="section-title"><?php the_field('aboutbl_details_title'); ?></h2>
+        <?php if( have_rows('aboutbl_details') ): ?>
+          <div class="aboutbl__details">
+          <?php $count = 0; while( have_rows('aboutbl_details') ): the_row(); ?>
+            <?php $detail = get_sub_field('detail'); $count++; ?>
+            <div class="aboutbl-detail">
+              <div class="aboutbl-detail__number"><?php echo $count; ?></div>
+              <div class="aboutbl-detail__content">
+                <h3><?php echo $detail['title']; ?></h3>
+                <p><?php echo $detail['text']; ?></p>
+              </div>
+              <img src="<?php echo $detail['image']; ?>" class="aboutbl-detail__image" alt="<?php $detail['title']; ?>">
+            </div>
+          <?php endwhile; ?>
+          </div>
+        <?php endif; ?>
+      </div>
+      <div class="aboutbl__col">
+        <h2 class="section-title"><?php the_field('aboutbl_advantages_title'); ?></h2>
+        <?php if( have_rows('aboutbl_advantages') ): ?>
+          <div class="aboutbl__benefits">
+          <?php while( have_rows('aboutbl_advantages') ): the_row(); ?>
+            <?php $advantage = get_sub_field('advantage'); ?>
+            <div class="benefit">
+              <div class="benefit__icon">
+                <img src="<?php echo $advantage['icon']; ?>" alt="">
+              </div>
+              <h2 class="benefit__title"><?php echo $advantage['title']; ?></h2>
+              <div class="benefit__text"><?php echo $advantage['text']; ?></div>
+            </div>
+          <?php endwhile; ?>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fclients">
+  <div class="container">
+    <div class="heading">
+      <h2 class="section-title">Information for clients</h2>
+    </div>
+    <div class="line-decor"></div>
+    <div class="fclients__list">
+      <div class="point">
+        <div class="point__icon"></div>
+        <div class="point__text">
+          <p>A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.</p>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point__icon"></div>
+        <div class="point__text">
+          <p>Your credit score can determine how much your loan and credit card applications are approved. Not only that, with a credit score you are given the freedom to choose the bank and lender that provides the best offer.</p>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point__icon"></div>
+        <div class="point__text">
+          <p>Credit can be complicated. But it doesn't have to be. Learning responsible credit behavior can set you up to reach your goals. Find out what's in your Equifax credit report, how your credit scores are calculated, and how to get on track in your credit journey.</p>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point__icon"></div>
+        <div class="point__text">
+          <p>Life is a series of milestones, and when it comes to finances, knowledge is your most valuable asset. If you're planning to buy a home, purchase a car, or take out a loan, find out what potential lenders are looking for.</p>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point__icon"></div>
+        <div class="point__text">
+          <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point__icon"></div>
+        <div class="point__text">
+          <p>Every business is singular, and every customer interaction is a highly personalized 1:1 proposition. But in each instance, our goal is simple: To work with our customers to create data-driven solutions that are as personal as they are profitable at every point along their customer’s journey.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="newsbl">
   <div class="container">
     <div class="heading">
@@ -147,148 +236,6 @@ get_header(); ?>
         <div class="ncard__blur"></div>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ncard-img.jpg" class="ncard__image" alt="Personal credit">
       </a>
-    </div>
-  </div>
-</section>
-
-<section class="aboutbl">
-  <div class="container">
-    <div class="aboutbl__container">
-      <div class="aboutbl__col">
-        <h2 class="section-title">Company details</h2>
-        <div class="aboutbl__details">
-          <div class="aboutbl-detail">
-            <div class="aboutbl-detail__number">1</div>
-            <div class="aboutbl-detail__content">
-              <h3>Personal credit</h3>
-              <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been.</p>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about-detail-image-01.svg" class="aboutbl-detail__image" alt="Personal credit">
-          </div>
-          <div class="aboutbl-detail">
-            <div class="aboutbl-detail__number">2</div>
-            <div class="aboutbl-detail__content">
-              <h3>Personal credit</h3>
-              <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been.</p>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about-detail-image-02.svg" class="aboutbl-detail__image" alt="Personal credit">
-          </div>
-          <div class="aboutbl-detail">
-            <div class="aboutbl-detail__number">3</div>
-            <div class="aboutbl-detail__content">
-              <h3>Personal credit</h3>
-              <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been.</p>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about-detail-image-03.svg" class="aboutbl-detail__image" alt="Personal credit">
-          </div>
-        </div>
-      </div>
-      <div class="aboutbl__col">
-        <h2 class="section-title">Our advantages</h2>
-        <div class="aboutbl__benefits">
-          <div class="benefit">
-            <div class="benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-01.svg" alt="">
-            </div>
-            <h2 class="benefit__title">Scoring</h2>
-            <div class="benefit__text">
-              A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-            </div>
-          </div>
-          <div class="benefit">
-            <div class="benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-02.svg" alt="">
-            </div>
-            <h2 class="benefit__title">Benefit</h2>
-            <div class="benefit__text">
-              Your credit score can determine how much your loan and credit card applications are approved. Not only that, with a credit score you are given the freedom to choose.
-            </div>
-          </div>
-          <div class="benefit">
-            <div class="benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-01.svg" alt="">
-            </div>
-            <h2 class="benefit__title">Understand your credit</h2>
-            <div class="benefit__text">
-              Credit can be complicated. But it doesn't have to be. Learning responsible credit behavior can set you up to reach your goals. Find out what's in your Equifax credit scores are calculate.
-            </div>
-          </div>
-          <div class="benefit">
-            <div class="benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-02.svg" alt="">
-            </div>
-            <h2 class="benefit__title">Reach your financial goals</h2>
-            <div class="benefit__text">
-              Life is a series of milestones, and when it comes to finances, knowledge is your most valuable asset. If you're planning to buy a home, purchase a car, or take out a loan.
-            </div>
-          </div>
-          <div class="benefit">
-            <div class="benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-01.svg" alt="">
-            </div>
-            <h2 class="benefit__title">Personal credit</h2>
-            <div class="benefit__text">
-              Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.
-            </div>
-          </div>
-          <div class="benefit">
-            <div class="benefit__icon">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-benefits-icon-02.svg" alt="">
-            </div>
-            <h2 class="benefit__title">Business credit</h2>
-            <div class="benefit__text">
-              Every business is singular, and every customer interaction is a highly personalized 1:1 proposition. But in each instance, our goal is simple.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="fclients">
-  <div class="container">
-    <div class="heading">
-      <h2 class="section-title">Information for clients</h2>
-    </div>
-    <div class="line-decor"></div>
-    <div class="fclients__list">
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Your credit score can determine how much your loan and credit card applications are approved. Not only that, with a credit score you are given the freedom to choose the bank and lender that provides the best offer.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Credit can be complicated. But it doesn't have to be. Learning responsible credit behavior can set you up to reach your goals. Find out what's in your Equifax credit report, how your credit scores are calculated, and how to get on track in your credit journey.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Life is a series of milestones, and when it comes to finances, knowledge is your most valuable asset. If you're planning to buy a home, purchase a car, or take out a loan, find out what potential lenders are looking for.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Every business is singular, and every customer interaction is a highly personalized 1:1 proposition. But in each instance, our goal is simple: To work with our customers to create data-driven solutions that are as personal as they are profitable at every point along their customer’s journey.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
