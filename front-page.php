@@ -91,47 +91,19 @@ get_header(); ?>
 <section class="fclients">
   <div class="container">
     <div class="heading">
-      <h2 class="section-title">Information for clients</h2>
+      <h2 class="section-title"><?php the_field('fclients_title'); ?></h2>
     </div>
     <div class="line-decor"></div>
-    <div class="fclients__list">
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.</p>
+    <?php if( have_rows('fclients_list') ): ?>
+      <div class="fclients__list">
+      <?php while( have_rows('fclients_list') ): the_row(); ?>
+        <div class="point">
+          <div class="point__icon"></div>
+          <div class="point__text"><?php the_sub_field('text'); ?></div>
         </div>
+      <?php endwhile; ?>
       </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Your credit score can determine how much your loan and credit card applications are approved. Not only that, with a credit score you are given the freedom to choose the bank and lender that provides the best offer.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Credit can be complicated. But it doesn't have to be. Learning responsible credit behavior can set you up to reach your goals. Find out what's in your Equifax credit report, how your credit scores are calculated, and how to get on track in your credit journey.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Life is a series of milestones, and when it comes to finances, knowledge is your most valuable asset. If you're planning to buy a home, purchase a car, or take out a loan, find out what potential lenders are looking for.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-        </div>
-      </div>
-      <div class="point">
-        <div class="point__icon"></div>
-        <div class="point__text">
-          <p>Every business is singular, and every customer interaction is a highly personalized 1:1 proposition. But in each instance, our goal is simple: To work with our customers to create data-driven solutions that are as personal as they are profitable at every point along their customer’s journey.</p>
-        </div>
-      </div>
-    </div>
+    <?php endif; ?>
   </div>
 </section>
 
