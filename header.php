@@ -47,8 +47,16 @@
             <a href="mailto:#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/email.svg" alt=""></a>
           </div>
           <div class="header__phone">
-            <a href="tel:+78127482253">+7 (812) 748-22-53</a>
-            <p>Support is available 24/7</p>
+            <?php 
+            $header_phone = get_field('header_phone', 'options');
+            if( $header_phone ): 
+                $header_phone_url = $header_phone['url'];
+                $header_phone_title = $header_phone['title'];
+                $header_phone_target = $header_phone['target'] ? $header_phone['target'] : '_self';
+                ?>
+                <a href="<?php echo esc_url( $header_phone_url ); ?>" target="<?php echo esc_attr( $header_phone_target ); ?>"><?php echo esc_html( $header_phone_title ); ?></a>
+            <?php endif; ?>
+            <?php if (get_field('header_text', 'options')) : ?><p><?php the_field('header_text', 'options'); ?></p><?php endif; ?>
           </div>
         </div>
       </nav>
