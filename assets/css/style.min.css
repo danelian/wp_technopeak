@@ -601,7 +601,7 @@ th {
   margin-bottom: 0;
 }
 .heading-row p {
-  max-width: 380px;
+  max-width: 400px;
   margin-top: 20px;
   margin-bottom: 0;
   font-size: 16px;
@@ -707,10 +707,12 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-.archive,
+.page-template-archive-services,
+.page-template-archive-industry,
+.page-template-archive,
 .single,
-.page-about-us,
-.page-contacts {
+.page-template-page-about-us,
+.page-template-page-contacts {
   background-image: url("../img/desctop-page-decor.svg");
   background-repeat: no-repeat;
   background-size: 60% auto;
@@ -725,10 +727,12 @@ h1, h2, h3, h4, h5, h6 {
   .frontpage-mobile-bg {
     display: block;
   }
-  .archive,
+  .page-template-archive-services,
+  .page-template-archive-industry,
+  .page-template-archive,
 .single,
-.page-about-us,
-.page-contacts {
+.page-template-page-about-us,
+.page-template-page-contacts {
     background-image: url("../img/mobile-page-decor.svg");
     background-position-y: 80px;
     background-size: 100% auto;
@@ -4198,6 +4202,10 @@ input[type=number]::-webkit-inner-spin-button {
   text-align: center;
   margin-top: 104px;
   height: calc(100vh - 120px);
+  background-image: url('../img/error-page-desktop.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80% auto;
 }
 .error-block__subtitle {
   margin-bottom: 24px;
@@ -4221,6 +4229,10 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 @media screen and (max-width: 1024px) {
+  .error-block {
+    background-image: url('../img/error-page-mobile.svg');
+    background-size: 100% auto;
+  }
   .error-block__subtitle {
     font-size: 120px;
   }

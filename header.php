@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html <?php language_attributes(); ?>>
 
 <head>
 	<meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body class="page-template-front-page">
+<body <?php echo body_class(); ?>>
 
 	<!-- Header -->
 <header class="header" id="header">
