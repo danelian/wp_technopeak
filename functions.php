@@ -68,6 +68,19 @@ add_action('init', 'technopeak_menus');
 
 
 /**
+ * ОТКЛЮЧАЕМ СОЗДАНИЕ МИНИАТЮР ФАЙЛОВ ДЛЯ УКАЗАННЫХ РАЗМЕРОВ
+ */
+add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
+function delete_intermediate_image_sizes( $sizes ){
+	// размеры которые нужно удалить
+	return array_diff( $sizes, [
+		'1536x1536',
+		'2048x2048',
+	] );
+}
+
+
+/**
  * СОЗДАНИЕ OPTIONS PAGE и OPTIONS SUB PAGE
  */
 if( function_exists('acf_add_options_page') ) {

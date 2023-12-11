@@ -43,8 +43,17 @@
         </form>
         <div class="header__contacts">
           <div class="header__buttons">
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telegram.svg" alt=""></a>
-            <a href="mailto:#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/email.svg" alt=""></a>
+            <?php if(get_field('telegram_link', 'options')): ?>
+              <a href="<?php the_field('telegram_link', 'options'); ?>" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telegram.svg" alt="">
+              </a>
+            <?php endif; ?>
+            <?php $email_link = get_field('email_link', 'options');
+            if( $email_link ): $email_link_url = $email_link['url']; ?>
+              <a href="<?php echo esc_url( $email_link_url ); ?>" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/email.svg" alt="">
+              </a>
+            <?php endif; ?>
           </div>
           <div class="header__phone">
             <?php 

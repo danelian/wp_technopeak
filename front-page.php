@@ -110,105 +110,33 @@ get_header(); ?>
 <section class="newsbl">
   <div class="container">
     <div class="heading">
-      <h2 class="section-title">NEWS</h2>
-      <a href="news.html" class="button-icon-arrow">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.51346 1.50002L17.0135 1.50002C17.8419 1.50002 18.5135 2.17159 18.5135 3.00002L18.5135 16.5C18.5135 17.3284 17.8419 18 17.0135 18C16.185 18 15.5135 17.3284 15.5135 16.5V6.62134L3.93198 18.2028C3.34619 18.7886 2.39645 18.7886 1.81066 18.2028C1.22487 17.617 1.22487 16.6673 1.81066 16.0815L13.3921 4.50002L3.51346 4.50002C2.68503 4.50002 2.01346 3.82844 2.01346 3.00002C2.01346 2.17159 2.68503 1.50002 3.51346 1.50002Z" fill="currentColor"/>
-        </svg>
-      </a>
+      <h2 class="section-title"><?php the_field('news_title'); ?></h2>
+      <?php if (get_field('news_link')) : ?>
+        <a href="<?php the_field('news_link'); ?>" class="button-icon-arrow">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.51346 1.50002L17.0135 1.50002C17.8419 1.50002 18.5135 2.17159 18.5135 3.00002L18.5135 16.5C18.5135 17.3284 17.8419 18 17.0135 18C16.185 18 15.5135 17.3284 15.5135 16.5V6.62134L3.93198 18.2028C3.34619 18.7886 2.39645 18.7886 1.81066 18.2028C1.22487 17.617 1.22487 16.6673 1.81066 16.0815L13.3921 4.50002L3.51346 4.50002C2.68503 4.50002 2.01346 3.82844 2.01346 3.00002C2.01346 2.17159 2.68503 1.50002 3.51346 1.50002Z" fill="currentColor"/>
+          </svg>
+        </a>
+      <?php endif; ?>
     </div>
-    <div class="newsbl__cards">
-      <a href="single-news.html" class="ncard">
-        <h3 class="ncard__title">Personal credit</h3>
-        <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-        <div class="ncard__date">13.05.2023</div>
-        <div class="link-witharrow">
-          inspect
-          <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.9396 6.89978C15.9396 7.45207 15.4919 7.89978 14.9396 7.89978L0.999972 7.89978C0.447688 7.89978 -2.76062e-05 7.45206 -2.75441e-05 6.89978C-2.74819e-05 6.34749 0.447688 5.89978 0.999973 5.89978L14.9396 5.89978C15.4919 5.89978 15.9396 6.3475 15.9396 6.89978Z" fill="currentColor"/>
-            <path d="M16.5098 7.56066C16.0954 7.9257 15.4234 7.9257 15.009 7.56066L8.44917 1.78288C8.03472 1.41784 8.03472 0.826 8.44917 0.460963C8.86361 0.0959248 9.53556 0.0959245 9.95001 0.460963L16.5098 6.23874C16.9243 6.60378 16.9243 7.19562 16.5098 7.56066Z" fill="currentColor"/>
-            <path d="M16.5098 6.45039C16.0954 6.08535 15.4234 6.08535 15.009 6.45039L8.44916 12.2282C8.03472 12.5932 8.03472 13.185 8.44916 13.5501C8.86361 13.9151 9.53556 13.9151 9.95001 13.5501L16.5098 7.77231C16.9243 7.40727 16.9243 6.81543 16.5098 6.45039Z" fill="currentColor"/>
-          </svg>            
+    <?php
+      global $post;
+      $query = new WP_Query( [
+        'posts_per_page' => 6,
+        'orderby'        => 'ASC',
+      ] );
+      if ( $query->have_posts() ) { ?>
+        <div class="news__cards">
+        <?php while ( $query->have_posts() ) {
+          $query->the_post();
+          get_template_part('template-parts/content-ncard');
+        } ?>
         </div>
-        <div class="ncard__blur"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ncard-img.jpg" class="ncard__image" alt="Personal credit">
-      </a>
-      <a href="single-news.html" class="ncard">
-        <h3 class="ncard__title">Personal credit</h3>
-        <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-        <div class="ncard__date">13.05.2023</div>
-        <div class="link-witharrow">
-          inspect
-          <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.9396 6.89978C15.9396 7.45207 15.4919 7.89978 14.9396 7.89978L0.999972 7.89978C0.447688 7.89978 -2.76062e-05 7.45206 -2.75441e-05 6.89978C-2.74819e-05 6.34749 0.447688 5.89978 0.999973 5.89978L14.9396 5.89978C15.4919 5.89978 15.9396 6.3475 15.9396 6.89978Z" fill="currentColor"/>
-            <path d="M16.5098 7.56066C16.0954 7.9257 15.4234 7.9257 15.009 7.56066L8.44917 1.78288C8.03472 1.41784 8.03472 0.826 8.44917 0.460963C8.86361 0.0959248 9.53556 0.0959245 9.95001 0.460963L16.5098 6.23874C16.9243 6.60378 16.9243 7.19562 16.5098 7.56066Z" fill="currentColor"/>
-            <path d="M16.5098 6.45039C16.0954 6.08535 15.4234 6.08535 15.009 6.45039L8.44916 12.2282C8.03472 12.5932 8.03472 13.185 8.44916 13.5501C8.86361 13.9151 9.53556 13.9151 9.95001 13.5501L16.5098 7.77231C16.9243 7.40727 16.9243 6.81543 16.5098 6.45039Z" fill="currentColor"/>
-          </svg>            
-        </div>
-        <div class="ncard__blur"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ncard-img.jpg" class="ncard__image" alt="Personal credit">
-      </a>
-      <a href="single-news.html" class="ncard">
-        <h3 class="ncard__title">Personal credit</h3>
-        <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-        <div class="ncard__date">13.05.2023</div>
-        <div class="link-witharrow">
-          inspect
-          <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.9396 6.89978C15.9396 7.45207 15.4919 7.89978 14.9396 7.89978L0.999972 7.89978C0.447688 7.89978 -2.76062e-05 7.45206 -2.75441e-05 6.89978C-2.74819e-05 6.34749 0.447688 5.89978 0.999973 5.89978L14.9396 5.89978C15.4919 5.89978 15.9396 6.3475 15.9396 6.89978Z" fill="currentColor"/>
-            <path d="M16.5098 7.56066C16.0954 7.9257 15.4234 7.9257 15.009 7.56066L8.44917 1.78288C8.03472 1.41784 8.03472 0.826 8.44917 0.460963C8.86361 0.0959248 9.53556 0.0959245 9.95001 0.460963L16.5098 6.23874C16.9243 6.60378 16.9243 7.19562 16.5098 7.56066Z" fill="currentColor"/>
-            <path d="M16.5098 6.45039C16.0954 6.08535 15.4234 6.08535 15.009 6.45039L8.44916 12.2282C8.03472 12.5932 8.03472 13.185 8.44916 13.5501C8.86361 13.9151 9.53556 13.9151 9.95001 13.5501L16.5098 7.77231C16.9243 7.40727 16.9243 6.81543 16.5098 6.45039Z" fill="currentColor"/>
-          </svg>            
-        </div>
-        <div class="ncard__blur"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ncard-img.jpg" class="ncard__image" alt="Personal credit">
-      </a>
-      <a href="single-news.html" class="ncard">
-        <h3 class="ncard__title">Personal credit</h3>
-        <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-        <div class="ncard__date">13.05.2023</div>
-        <div class="link-witharrow">
-          inspect
-          <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.9396 6.89978C15.9396 7.45207 15.4919 7.89978 14.9396 7.89978L0.999972 7.89978C0.447688 7.89978 -2.76062e-05 7.45206 -2.75441e-05 6.89978C-2.74819e-05 6.34749 0.447688 5.89978 0.999973 5.89978L14.9396 5.89978C15.4919 5.89978 15.9396 6.3475 15.9396 6.89978Z" fill="currentColor"/>
-            <path d="M16.5098 7.56066C16.0954 7.9257 15.4234 7.9257 15.009 7.56066L8.44917 1.78288C8.03472 1.41784 8.03472 0.826 8.44917 0.460963C8.86361 0.0959248 9.53556 0.0959245 9.95001 0.460963L16.5098 6.23874C16.9243 6.60378 16.9243 7.19562 16.5098 7.56066Z" fill="currentColor"/>
-            <path d="M16.5098 6.45039C16.0954 6.08535 15.4234 6.08535 15.009 6.45039L8.44916 12.2282C8.03472 12.5932 8.03472 13.185 8.44916 13.5501C8.86361 13.9151 9.53556 13.9151 9.95001 13.5501L16.5098 7.77231C16.9243 7.40727 16.9243 6.81543 16.5098 6.45039Z" fill="currentColor"/>
-          </svg>            
-        </div>
-        <div class="ncard__blur"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ncard-img.jpg" class="ncard__image" alt="Personal credit">
-      </a>
-      <a href="single-news.html" class="ncard">
-        <h3 class="ncard__title">Personal credit</h3>
-        <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-        <div class="ncard__date">13.05.2023</div>
-        <div class="link-witharrow">
-          inspect
-          <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.9396 6.89978C15.9396 7.45207 15.4919 7.89978 14.9396 7.89978L0.999972 7.89978C0.447688 7.89978 -2.76062e-05 7.45206 -2.75441e-05 6.89978C-2.74819e-05 6.34749 0.447688 5.89978 0.999973 5.89978L14.9396 5.89978C15.4919 5.89978 15.9396 6.3475 15.9396 6.89978Z" fill="currentColor"/>
-            <path d="M16.5098 7.56066C16.0954 7.9257 15.4234 7.9257 15.009 7.56066L8.44917 1.78288C8.03472 1.41784 8.03472 0.826 8.44917 0.460963C8.86361 0.0959248 9.53556 0.0959245 9.95001 0.460963L16.5098 6.23874C16.9243 6.60378 16.9243 7.19562 16.5098 7.56066Z" fill="currentColor"/>
-            <path d="M16.5098 6.45039C16.0954 6.08535 15.4234 6.08535 15.009 6.45039L8.44916 12.2282C8.03472 12.5932 8.03472 13.185 8.44916 13.5501C8.86361 13.9151 9.53556 13.9151 9.95001 13.5501L16.5098 7.77231C16.9243 7.40727 16.9243 6.81543 16.5098 6.45039Z" fill="currentColor"/>
-          </svg>            
-        </div>
-        <div class="ncard__blur"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ncard-img.jpg" class="ncard__image" alt="Personal credit">
-      </a>
-      <a href="single-news.html" class="ncard">
-        <h3 class="ncard__title">Personal credit</h3>
-        <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-        <div class="ncard__date">13.05.2023</div>
-        <div class="link-witharrow">
-          inspect
-          <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.9396 6.89978C15.9396 7.45207 15.4919 7.89978 14.9396 7.89978L0.999972 7.89978C0.447688 7.89978 -2.76062e-05 7.45206 -2.75441e-05 6.89978C-2.74819e-05 6.34749 0.447688 5.89978 0.999973 5.89978L14.9396 5.89978C15.4919 5.89978 15.9396 6.3475 15.9396 6.89978Z" fill="currentColor"/>
-            <path d="M16.5098 7.56066C16.0954 7.9257 15.4234 7.9257 15.009 7.56066L8.44917 1.78288C8.03472 1.41784 8.03472 0.826 8.44917 0.460963C8.86361 0.0959248 9.53556 0.0959245 9.95001 0.460963L16.5098 6.23874C16.9243 6.60378 16.9243 7.19562 16.5098 7.56066Z" fill="currentColor"/>
-            <path d="M16.5098 6.45039C16.0954 6.08535 15.4234 6.08535 15.009 6.45039L8.44916 12.2282C8.03472 12.5932 8.03472 13.185 8.44916 13.5501C8.86361 13.9151 9.53556 13.9151 9.95001 13.5501L16.5098 7.77231C16.9243 7.40727 16.9243 6.81543 16.5098 6.45039Z" fill="currentColor"/>
-          </svg>            
-        </div>
-        <div class="ncard__blur"></div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ncard-img.jpg" class="ncard__image" alt="Personal credit">
-      </a>
-    </div>
+      <?php } else {
+        // Постов не найдено
+      }
+      wp_reset_postdata(); // Сбрасываем $post
+      ?>
   </div>
 </section>
 	
