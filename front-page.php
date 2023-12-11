@@ -140,28 +140,6 @@ get_header(); ?>
   </div>
 </section>
 	
-<section class="contactusbl">
-  <div class="container">
-    <div class="contactusbl__container">
-      <div class="heading">
-        <h2 class="section-title">Contact us for consultation</h2>
-        <p>Life is a series of milestones, and when it comes to finances, knowledge is your most valuable asset. If you're planning to buy a home, purchase a car, or take out a loan, find out what potential lenders are looking for.</p>
-      </div>
-      <div class="form">
-        <div class="form-group">
-          <input type="text" class="form-input" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-input" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-        </div>
-        <input type="submit" value="Send" class="button">
-        <div class="accept">After clicking the button you agree to the information <a href="#">processing policy</a></div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-section/contact-us'); ?>
 
 <?php get_footer(); ?>

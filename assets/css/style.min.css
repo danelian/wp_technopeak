@@ -1409,16 +1409,38 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 /*-----form-----*/
-.form {
+.form,
+.wpcf7,
+.wpcf7-form {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  width: 100%;
+}
+.wpcf7-spinner,
+.wpcf7-not-valid-tip,
+.wpcf7-response-output,
+.hidden {
+  display: none;
+}
+.form textarea.wpcf7-not-valid,
+.form-input.wpcf7-not-valid {
+  color: var(--red-color) !important;
+  border-color: var(--red-color) !important;
+}
+.form textarea.wpcf7-not-valid::placeholder,
+.form-input.wpcf7-not-valid::placeholder {
+  color: var(--red-color) !important;
 }
 .form-group {
   position: relative;
   width: 100%;
   margin-top: 0;
   margin-bottom: 20px;
+}
+.wpcf7-form p,
+.form-group p {
+  margin: 0 !important;
 }
 .form label {
   display: block;
@@ -2357,11 +2379,11 @@ input[type=number]::-webkit-inner-spin-button {
 .contactusbl__container .form {
   width: calc(100% - 560px - 20px);
 }
-.contactusbl__container .form .form-group:nth-child(1) {
+.contactusbl__container .form .form-group:nth-child(2) {
   width: calc(50% - 10px);
   margin-right: 20px;
 }
-.contactusbl__container .form .form-group:nth-child(2) {
+.contactusbl__container .form .form-group:nth-child(3) {
   width: calc(50% - 10px);
 }
 .contactusbl__container .form .accept {
@@ -2402,11 +2424,11 @@ input[type=number]::-webkit-inner-spin-button {
   .contactusbl__container .form {
     width: 100%;
   }
-  .contactusbl__container .form .form-group:nth-child(1) {
+  .contactusbl__container .form .form-group:nth-child(2) {
     width: 100%;
     margin-right: 0;
   }
-  .contactusbl__container .form .form-group:nth-child(2) {
+  .contactusbl__container .form .form-group:nth-child(3) {
     width: 100%;
   }
   .contactusbl__container .form .button {
