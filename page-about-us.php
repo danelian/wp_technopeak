@@ -4,28 +4,32 @@ Template Name: About us
 */
 get_header(); ?>
 
-	<div class="aboutus">
+<div class="aboutus">
   <div class="container">
-    <h1 class="page-title">About us</h1>
+    <h1 class="page-title"><?php the_title(); ?></h1>
+
     <div class="aboutus-stats">
       <div class="aboutus-stats__content">
-        <h2 class="section-title">a few words <span>about us</span> and <span>our work</span></h2>
-        <div class="row">
-          <div class="line-content">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <h2 class="section-title"><?php the_field('a_stats_title'); ?></h2>
+        <?php if( have_rows('a_stats_texts') ): ?>
+          <div class="row">
+          <?php while( have_rows('a_stats_texts') ): the_row(); ?>
+            <div class="line-content"><?php the_sub_field('text'); ?></div>
+          <?php endwhile; ?>
           </div>
-          <div class="line-content">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <?php endif; ?>
+        <?php if( have_rows('a_digits') ): ?>
+          <div class="digits">
+          <?php while( have_rows('a_digits') ): the_row(); ?>
+            <?php $digit = get_sub_field('digit'); ?>
+            <p class="digit"><span><?php echo $digit['number']; ?></span><?php echo $digit['text']; ?></p>
+          <?php endwhile; ?>
           </div>
-        </div>
-        <div class="digits">
-          <p class="digit"><span>4.543</span>New clients who are actively helped by our service</p>
-          <p class="digit"><span>+300</span>Aliquip ex ea commodo consequat</p>
-          <p class="digit"><span>289</span>Ut enim ad minim veniam, quis nostrud</p>
-        </div>
+        <?php endif; ?>
       </div>
-      <div class="aboutus-stats__image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/about-us-image.jpg');"></div>
+      <div class="aboutus-stats__image" style="background-image: url('<?php the_field('a_stats_image'); ?>');"></div>
     </div>
+
     <div class="aboutus-indi">
       <h2 class="section-title">Our indicators</h2>
       <div class="aboutus-indi__container">
@@ -60,6 +64,7 @@ get_header(); ?>
         </div>
       </div>
     </div>
+
     <div class="aboutus-benefits">
       <h2 class="section-title">Our advantages</h2>
       <div class="aboutus-benefits__list">
@@ -121,28 +126,7 @@ get_header(); ?>
     </div>
   </div>
 </div>
-	<section class="contactusbl">
-  <div class="container">
-    <div class="contactusbl__container">
-      <div class="heading">
-        <h2 class="section-title">Contact us for consultation</h2>
-        <p>Life is a series of milestones, and when it comes to finances, knowledge is your most valuable asset. If you're planning to buy a home, purchase a car, or take out a loan, find out what potential lenders are looking for.</p>
-      </div>
-      <div class="form">
-        <div class="form-group">
-          <input type="text" class="form-input" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-input" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-        </div>
-        <input type="submit" value="Send" class="button">
-        <div class="accept">After clicking the button you agree to the information <a href="#">processing policy</a></div>
-      </div>
-    </div>
-  </div>
-</section>
+
+<?php get_template_part('template-section/contact-us'); ?>
 
 <?php get_footer(); ?>
