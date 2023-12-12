@@ -16,7 +16,7 @@ get_header(); ?>
       $query = new WP_Query( array(
         'posts_per_page' => 12,
         'paged' => $paged,
-        'orderby' => 'ASC',
+        'order' => 'ASC',
       ));
     ?>
 

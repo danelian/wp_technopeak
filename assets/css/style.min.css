@@ -1871,6 +1871,11 @@ input[type=number]::-webkit-inner-spin-button {
   transition: 0.3s ease;
   z-index: 0;
 }
+@media screen and (min-width: 1366px) {
+  .ncard {
+    min-height: 300px;
+  }
+}
 .ncard__title {
   margin-top: 0;
   margin-bottom: 32px;
@@ -2499,6 +2504,9 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 48px 40px;
   border-radius: 15px;
   background: #f9f9f9;
+}
+.wp-block-columns:last-child {
+  margin-bottom: 0 !important;
 }
 .article::after {
   content: "";
