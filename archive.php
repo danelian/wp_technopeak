@@ -4,6 +4,8 @@ Template Name: News
 */
 get_header(); ?>
 
+<?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
+
 <section class="news">
   <div class="container">
     <div class="heading-row">
@@ -16,7 +18,7 @@ get_header(); ?>
       $query = new WP_Query( array(
         'posts_per_page' => 12,
         'paged' => $paged,
-        'order' => 'ASC',
+        'order' => 'DESC',
       ));
     ?>
 

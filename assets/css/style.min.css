@@ -2461,7 +2461,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 .news {
-  padding-top: 200px;
   padding-bottom: 60px;
 }
 .news__cards {
@@ -2495,7 +2494,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 .sn-section {
-  padding-top: 200px;
   padding-bottom: 32px;
 }
 
@@ -2762,7 +2760,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 .aboutus {
-  padding-top: 220px;
   padding-bottom: 100px;
 }
 .aboutus-stats {
@@ -3098,7 +3095,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 .services {
-  padding-top: 200px;
   padding-bottom: 80px;
 }
 .services .heading-row {
@@ -3258,7 +3254,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 .s-head {
-  padding-top: 200px;
   margin-bottom: 80px;
 }
 .s-head__container {
@@ -3742,7 +3737,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 .industry {
-  padding-top: 200px;
   padding-bottom: 60px;
   margin-bottom: 48px;
 }
@@ -3838,7 +3832,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 .si-section {
-  padding-top: 200px;
   margin-bottom: 80px;
 }
 .si-head {
@@ -3963,7 +3956,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 .contacts {
-  padding-top: 220px;
   padding-bottom: 80px;
 }
 .contacts__container {
@@ -4246,5 +4238,60 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .error-block .section-title {
     margin-bottom: 24px;
+  }
+}
+
+.services,
+.si-section,
+.industry,
+.s-head,
+.news,
+.sn-section,
+.aboutus,
+.contacts {
+  padding-top: 48px;
+}
+
+/*-----breadcrumbs-----*/
+.kama_breadcrumbs {
+  display: inline;
+  margin: 104px auto 0 auto;
+  padding: 20px var(--container-offset);
+  max-width: var(--container-width);
+  width: var(--container-width);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.kama_breadcrumbs span {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #5d5d5d;
+}
+.kama_breadcrumbs a,
+.kama_breadcrumbs a span {
+  position: relative;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #acacac;
+  transition: color 0.3s ease-in;
+}
+.kama_breadcrumbs a:hover span,
+.kama_breadcrumbs a:hover {
+  color: var(--red-color);
+}
+.kb_sep {
+  color: #acacac !important;
+}
+
+@media screen and (max-width: 1024px) {
+  /*-----breadcrumbs-----*/
+  .kama_breadcrumbs {
+    margin-bottom: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 }

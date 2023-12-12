@@ -4,6 +4,8 @@ Template Name: About us
 */
 get_header(); ?>
 
+<?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
+
 <div class="aboutus">
   <div class="container">
     <h1 class="page-title"><?php the_title(); ?></h1>

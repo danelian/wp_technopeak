@@ -4,6 +4,8 @@ Template Name: Single News
 */
 get_header(); ?>
 
+<?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
+
 <section class="sn-section">
   <div class="container">
     <article class="article">
