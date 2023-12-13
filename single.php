@@ -4,7 +4,21 @@ Template Name: Single News
 */
 get_header(); ?>
 
-<?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
+<div class="kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+  <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+    <a href="http://localhost:8888/technopeak" itemprop="item">
+      <span itemprop="name">Home</span>
+    </a>
+  </span>
+  <span class="kb_sep"> / </span>
+  <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+    <a href="<?php echo get_home_url(); ?>/news/" itemprop="item">
+      <span itemprop="name">News</span>
+    </a>
+  </span>
+  <span class="kb_sep"> / </span>
+  <span class="kb_title"><?php the_title(); ?></span>
+</div>
 
 <section class="sn-section">
   <div class="container">

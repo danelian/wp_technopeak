@@ -166,11 +166,11 @@ function register_post_types(){
 		'query_var'           => true,
 	] );
 
-	register_post_type( 'Cases', [
+	register_post_type( 'Case', [
 		'label'  => null,
 		'labels' => [
-			'name'               => 'Cases', // основное название для типа записи
-			'singular_name'      => 'Cases', // название для одной записи этого типа
+			'name'               => 'Case', // основное название для типа записи
+			'singular_name'      => 'Case', // название для одной записи этого типа
 			'add_new'            => 'Добавить Cases', // для добавления новой записи
 			'add_new_item'       => 'Добавление Cases', // заголовка у вновь создаваемой записи в админ-панели.
 			'edit_item'          => 'Редактирование Cases', // для редактирования типа записи
@@ -200,7 +200,7 @@ function register_post_types(){
 		'hierarchical'        => false,
 		'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'), // 'trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => [''],
-		'has_archive'         => false,
+		'has_archive'         => true,
 		'rewrite'             => true,
 		'query_var'           => true,
 	] );
