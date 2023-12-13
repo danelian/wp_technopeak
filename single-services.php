@@ -8,65 +8,6 @@ get_header(); ?>
 
 <?php the_content(); ?>
 
-<section class="s-features" id="s-features">
-  <div class="container">
-    <div class="s-features__container">
-      <h2 class="section-title">Features</h2>
-      <div class="s-features__list">
-        <div class="feature">
-          <div class="feature__icon"></div>
-          <h2 class="feature__title">Scoring</h2>
-          <div class="feature__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature__icon"></div>
-          <h2 class="feature__title">Scoring</h2>
-          <div class="feature__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature__icon"></div>
-          <h2 class="feature__title">Scoring</h2>
-          <div class="feature__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature__icon"></div>
-          <h2 class="feature__title">Scoring</h2>
-          <div class="feature__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature__icon"></div>
-          <h2 class="feature__title">Scoring</h2>
-          <div class="feature__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature__icon"></div>
-          <h2 class="feature__title">Scoring</h2>
-          <div class="feature__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature__icon"></div>
-          <h2 class="feature__title">Scoring</h2>
-          <div class="feature__text">
-            A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="s-clients" id="s-clients">
   <div class="container">
     <h2 class="section-title">Clients</h2>
