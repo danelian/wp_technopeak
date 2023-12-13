@@ -110,6 +110,17 @@ function custom_register_blocks()
 			),
 		));
 
+		acf_register_block_type(array(
+			'name'              => 'content-block',
+			'title'             => __('Content Block'),
+			'render_template'   => 'template-parts/blocks/content-block.php',
+			'category'          => 'technopeak-theme-templates',
+			'icon' => array(
+				'foreground' => '#41b3e4',
+				'src' => 'book-alt',
+			),
+		));
+
 	}
 }
 add_action('acf/init', 'custom_register_blocks');
