@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . '/includes/wp_custom-block.php');
+
 /**
  * ДОБАВЛЕНИЕ ВОЗМОЖНОСТЕЙ
  */

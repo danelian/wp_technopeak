@@ -6,38 +6,7 @@ get_header(); ?>
 
 <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
 
-<section class="s-head" id="s-head">
-  <div class="container">
-    <div class="s-head__container">
-      <div class="s-head__content">
-        <h1 class="title">IT Infrastructure Support</h1>
-        <p>Implementation, configuration, and administration of IT systems, including servers, storage systems, operating systems, network devices and others</p>
-        <ul>
-          <li>Network support</li>
-          <li>Monitoring 24/7</li>
-          <li>Cyber Security support</li>
-          <li>Server Configuration</li>
-          <li>Physical Server maintenance</li>
-          <li>Data management</li>
-        </ul>
-        <a href="#" class="button">
-          Try it
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.51346 1.50002L17.0135 1.50002C17.8419 1.50002 18.5135 2.17159 18.5135 3.00002L18.5135 16.5C18.5135 17.3284 17.8419 18 17.0135 18C16.185 18 15.5135 17.3284 15.5135 16.5V6.62134L3.93198 18.2028C3.34619 18.7886 2.39645 18.7886 1.81066 18.2028C1.22487 17.617 1.22487 16.6673 1.81066 16.0815L13.3921 4.50002L3.51346 4.50002C2.68503 4.50002 2.01346 3.82844 2.01346 3.00002C2.01346 2.17159 2.68503 1.50002 3.51346 1.50002Z" fill="currentColor"/>
-          </svg>
-        </a>
-      </div>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/single-services-head-image.jpg" alt="" class="s-head__image">
-    </div>
-    <div class="s-head__nav">
-      <a href="#s-head">IT Infrastructure Support</a>
-      <a href="#s-about">About</a>
-      <a href="#s-benefits">Benefits</a>
-      <a href="#s-features">Features</a>
-      <a href="#s-clients">Clients</a>
-    </div>
-  </div>
-</section>
+<?php the_content(); ?>
 
 <section class="s-about" id="s-about">
   <div class="container">
