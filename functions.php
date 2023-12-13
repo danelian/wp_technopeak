@@ -161,7 +161,7 @@ function register_post_types(){
 		'hierarchical'        => false,
 		'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'), // 'trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => [''],
-		'has_archive'         => true,
+		'has_archive'         => false,
 		'rewrite'             => true,
 		'query_var'           => true,
 	] );
@@ -200,7 +200,7 @@ function register_post_types(){
 		'hierarchical'        => false,
 		'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'), // 'trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => [''],
-		'has_archive'         => true,
+		'has_archive'         => false,
 		'rewrite'             => true,
 		'query_var'           => true,
 	] );
