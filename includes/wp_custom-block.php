@@ -54,10 +54,22 @@ function custom_register_blocks()
 
 	// Проверяем, что функция доступна.
 	if (function_exists('acf_register_block_type')) {
+    
 		acf_register_block_type(array(
 			'name'              => 'service-head',
 			'title'             => __('Service head'),
 			'render_template'   => 'template-parts/blocks/service-head.php',
+			'category'          => 'technopeak-theme-templates',
+			'icon' => array(
+				'foreground' => '#41b3e4',
+				'src' => 'book-alt',
+			),
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'service-about',
+			'title'             => __('Service About'),
+			'render_template'   => 'template-parts/blocks/service-about.php',
 			'category'          => 'technopeak-theme-templates',
 			'icon' => array(
 				'foreground' => '#41b3e4',

@@ -8,29 +8,6 @@ get_header(); ?>
 
 <?php the_content(); ?>
 
-<section class="s-about" id="s-about">
-  <div class="container">
-    <div class="s-about__container">
-      <div class="s-about__content">
-        <h2 class="section-title">About</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <div class="row">
-          <div class="col">
-            <h3>Personal credit</h3>
-            <p>Personal credit scoring is the application of financial risk forecasting. It becomes an even important task as financial institutions have been experiencing serious competition and challenges.</p>
-          </div>
-          <div class="col">
-            <h3>Scoring</h3>
-            <p>A credit score or credit score is an assessment in the form of a number that reflects a person or debtor, about the possibility of you paying off credit in the next loan application.</p>
-          </div>
-        </div>
-      </div>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/it-infrastructure-support.png" class="s-about__image" alt="">
-    </div>
-  </div>
-</section>
-
 <section class="s-benefits" id="s-benefits">
   <div class="container">
     <h2 class="section-title">Benefits</h2>
