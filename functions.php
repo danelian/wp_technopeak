@@ -81,6 +81,131 @@ function delete_intermediate_image_sizes( $sizes ){
 
 
 /**
+ * РЕГИСТРАЦИЯ POST TYPES
+ */
+add_action( 'init', 'register_post_types' );
+function register_post_types(){
+
+	register_post_type( 'Services', [
+		'label'  => null,
+		'labels' => [
+			'name'               => 'Services', // основное название для типа записи
+			'singular_name'      => 'Services', // название для одной записи этого типа
+			'add_new'            => 'Добавить Services', // для добавления новой записи
+			'add_new_item'       => 'Добавление Services', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование Services', // для редактирования типа записи
+			'new_item'           => 'Новое Services', // текст новой записи
+			'view_item'          => 'Смотреть Services', // для просмотра записи этого типа.
+			'search_items'       => 'Искать Services', // для поиска по этим типам записи
+			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Services', // название меню
+		],
+		'description'            => '',
+		'public'                 => true,
+		// 'publicly_queryable'  => null, // зависит от public
+		// 'exclude_from_search' => null, // зависит от public
+		// 'show_ui'             => null, // зависит от public
+		// 'show_in_nav_menus'   => null, // зависит от public
+		'show_in_menu'           => null, // показывать ли в меню админки
+		// 'show_in_admin_bar'   => null, // зависит от show_in_menu
+		'show_in_rest'        => true, // добавить в REST API. C WP 4.7
+		'rest_base'           => null, // $post_type. C WP 4.7
+		'menu_position'       => null,
+		'menu_icon'           => null,
+		//'capability_type'   => 'post',
+		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		'hierarchical'        => false,
+		'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'), // 'trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => [''],
+		'has_archive'         => false,
+		'rewrite'             => true,
+		'query_var'           => true,
+	] );
+
+	register_post_type( 'Industry', [
+		'label'  => null,
+		'labels' => [
+			'name'               => 'Industry', // основное название для типа записи
+			'singular_name'      => 'Industry', // название для одной записи этого типа
+			'add_new'            => 'Добавить Industry', // для добавления новой записи
+			'add_new_item'       => 'Добавление Industry', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование Industry', // для редактирования типа записи
+			'new_item'           => 'Новое Industry', // текст новой записи
+			'view_item'          => 'Смотреть Industry', // для просмотра записи этого типа.
+			'search_items'       => 'Искать Industry', // для поиска по этим типам записи
+			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Industry', // название меню
+		],
+		'description'            => '',
+		'public'                 => true,
+		// 'publicly_queryable'  => null, // зависит от public
+		// 'exclude_from_search' => null, // зависит от public
+		// 'show_ui'             => null, // зависит от public
+		// 'show_in_nav_menus'   => null, // зависит от public
+		'show_in_menu'           => null, // показывать ли в меню админки
+		// 'show_in_admin_bar'   => null, // зависит от show_in_menu
+		'show_in_rest'        => true, // добавить в REST API. C WP 4.7
+		'rest_base'           => null, // $post_type. C WP 4.7
+		'menu_position'       => null,
+		'menu_icon'           => null,
+		//'capability_type'   => 'post',
+		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		'hierarchical'        => false,
+		'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'), // 'trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => [''],
+		'has_archive'         => true,
+		'rewrite'             => true,
+		'query_var'           => true,
+	] );
+
+	register_post_type( 'Cases', [
+		'label'  => null,
+		'labels' => [
+			'name'               => 'Cases', // основное название для типа записи
+			'singular_name'      => 'Cases', // название для одной записи этого типа
+			'add_new'            => 'Добавить Cases', // для добавления новой записи
+			'add_new_item'       => 'Добавление Cases', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование Cases', // для редактирования типа записи
+			'new_item'           => 'Новое Cases', // текст новой записи
+			'view_item'          => 'Смотреть Cases', // для просмотра записи этого типа.
+			'search_items'       => 'Искать Cases', // для поиска по этим типам записи
+			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Cases', // название меню
+		],
+		'description'            => '',
+		'public'                 => true,
+		// 'publicly_queryable'  => null, // зависит от public
+		// 'exclude_from_search' => null, // зависит от public
+		// 'show_ui'             => null, // зависит от public
+		// 'show_in_nav_menus'   => null, // зависит от public
+		'show_in_menu'           => null, // показывать ли в меню админки
+		// 'show_in_admin_bar'   => null, // зависит от show_in_menu
+		'show_in_rest'        => true, // добавить в REST API. C WP 4.7
+		'rest_base'           => null, // $post_type. C WP 4.7
+		'menu_position'       => null,
+		'menu_icon'           => null,
+		//'capability_type'   => 'post',
+		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		'hierarchical'        => false,
+		'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'), // 'trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => [''],
+		'has_archive'         => true,
+		'rewrite'             => true,
+		'query_var'           => true,
+	] );
+}
+
+
+/**
  * СОЗДАНИЕ OPTIONS PAGE и OPTIONS SUB PAGE
  */
 if( function_exists('acf_add_options_page') ) {

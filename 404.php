@@ -4,7 +4,7 @@
     <div class="container">
       <span class="error-block__subtitle">404</span>
       <h1 class="section-title">Page not found</h1>
-      <a href="/" class="button-rounded">Go back</a>
+      <a href="<?php echo get_home_url(); ?>" class="button-rounded">Go back</a>
     </div>
   </div>
 
