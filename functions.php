@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/includes/wp_custom-block.php');
+require_once(__DIR__ . '/includes/custom-search.php');
 
 /**
  * ДОБАВЛЕНИЕ ВОЗМОЖНОСТЕЙ
@@ -256,7 +257,7 @@ class Kama_Breadcrumbs {
 		'home'       => 'Home',
 		'paged'      => 'Page %d',
 		'_404'       => 'Error 404',
-		'search'     => 'Результаты поиска по запросу - <b>%s</b>',
+		'search'     => 'Search results for your query - <b>%s</b>',
 		'author'     => 'Архив автора: <b>%s</b>',
 		'year'       => 'Архив за <b>%d</b> год',
 		'month'      => 'Архив за: <b>%s</b>',
