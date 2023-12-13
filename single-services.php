@@ -8,59 +8,6 @@ get_header(); ?>
 
 <?php the_content(); ?>
 
-<section class="s-clients" id="s-clients">
-  <div class="container">
-    <h2 class="section-title">Clients</h2>
-    <div class="clients__list">
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-01.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-02.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-03.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-04.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-05.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-01.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-02.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-03.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-04.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-05.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-01.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-02.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-03.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-04.jpg" alt="">
-      </div>
-      <div class="col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clients-list-05.jpg" alt="">
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="content-section">
   <div class="container">
     <div class="wrapper">
